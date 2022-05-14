@@ -1,12 +1,16 @@
-import { useState } from 'react'
+// import 時也必須使用 {} 表示要匯入的是名稱
+import { Navbar, Welcome, Footer, Services, Transactions } from "./components";
 
 const App = () => {
-
   return (
-    <div className="App">
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+    <div className="min-h-screen">
+      <div className="gradient-bg-welcome">
+        <Navbar />
+        <Welcome />
+      </div>
+      <Services />
+      <Transactions />
+      <Footer />
     </div>
   )
 }
