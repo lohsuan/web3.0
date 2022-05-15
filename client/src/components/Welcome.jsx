@@ -3,7 +3,7 @@ import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 
-// import { TransactionContext } from "../context/TransactionContext";
+import { TransactionContext } from "../context/TransactionContext";
 // import { shortenAddress } from "../utils/shortenAddress";
 import { Loader } from ".";
 
@@ -21,24 +21,16 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 );
 
 const Welcome = () => {
-    // const { currentAccount, connectWallet, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
+    const { currentAccount, connectWallet, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
 
-    const handleChange = () => {
-
-    };
-
-    const connectWallet = () => {
-
-    };
-    
     const handleSubmit = (e) => {
-        // const { addressTo, amount, keyword, message } = formData;
- 
-        // e.preventDefault();
+        const { addressTo, amount, keyword, message } = formData;
 
-        // if (!addressTo || !amount || !keyword || !message) return;
+        e.preventDefault();
 
-        // sendTransaction();
+        if (!addressTo || !amount || !keyword || !message) return;
+
+        sendTransaction();
     };
 
     return (
@@ -53,8 +45,7 @@ const Welcome = () => {
                     <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
                         Explore the crypto world. Buy and sell cryptocurrencies easily on Krypto.
                     </p>
-                    {/* {!currentAccount && ( */}
-                    {true && (
+                    {!currentAccount && (
                         <button
                             type="button"
                             onClick={connectWallet}
