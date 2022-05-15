@@ -22,6 +22,7 @@ export default {Loader};
 - [Github Code](https://github.com/adrianhajdin/project_web3.0)
 - [Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
 - [Install Tailwind CSS with Create React App](https://tailwindcss.com/docs/guides/create-react-app)
+- [EndPoint API for Giphy](https://developers.giphy.com/docs/api/endpoint#search)
 
 ### Packages
 - react-icons 

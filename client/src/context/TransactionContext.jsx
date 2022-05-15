@@ -71,20 +71,19 @@ export const TransactionsProvider = ({ children }) => {
         }
     };
 
-    // const checkIfTransactionsExists = async () => {
-    //     try {
-    //         if (ethereum) {
-    //             const transactionsContract = createEthereumContract();
-    //             const currentTransactionCount = await transactionsContract.getTransactionCount();
+    const checkIfTransactionsExists = async () => {
+        try {
+            if (ethereum) {
+                const transactionsContract = createEthereumContract();
+                const currentTransactionCount = await transactionsContract.getTransactionCount();
 
-    //             window.localStorage.setItem("transactionCount", currentTransactionCount);
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-
-    //         throw new Error("No ethereum object");
-    //     }
-    // };
+                window.localStorage.setItem("transactionCount", currentTransactionCount);
+            }
+        } catch (error) {
+            console.log(error);
+            throw new Error("No ethereum object");
+        }
+    };
 
     const connectWallet = async () => {
         try {
@@ -141,7 +140,7 @@ export const TransactionsProvider = ({ children }) => {
 
     useEffect(() => {
         checkIfWalletIsConnect();
-        // checkIfTransactionsExists();
+        checkIfTransactionsExists();
     }, [transactionCount]);
 
     return (
