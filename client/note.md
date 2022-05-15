@@ -26,3 +26,4 @@ export default {Loader};
 ### Packages
 - react-icons 
 - ethers
+- -D @tailwindcss/forms
